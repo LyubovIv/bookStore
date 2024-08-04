@@ -57,7 +57,7 @@
             this.buttonEnter.Name = "buttonEnter";
             this.buttonEnter.Size = new System.Drawing.Size(113, 23);
             this.buttonEnter.TabIndex = 2;
-            this.buttonEnter.Text = "Подключиться";
+            this.buttonEnter.Text = "Отключиться";
             this.buttonEnter.UseVisualStyleBackColor = true;
             this.buttonEnter.Click += new System.EventHandler(this.buttonEnter_Click);
             // 
@@ -91,7 +91,6 @@
             this.Name = "ChatForm";
             this.Text = "Чат";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChatForm_FormClosing);
-            this.Load += new System.EventHandler(this.ChatForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

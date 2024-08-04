@@ -15,9 +15,21 @@ namespace clientChat
         bool IsConnected = false;
         ChatService.ChatServiceClient Client;
         int ID;
-        public ChatForm()
+        LoginForm loginForm;
+        public ChatForm(string name, LoginForm lg)
         {
             InitializeComponent();
+            
+            loginForm = lg;
+
+            UserBox.Text = name;
+            UserBox.Enabled = false;
+            ConnectUser();
+        }
+        public void ChangeUser(string name)
+        {
+            UserBox.Text = name;
+            ConnectUser();
         }
         void ConnectUser()
         {
@@ -27,8 +39,8 @@ namespace clientChat
 
                 ID = Client.Connect(UserBox.Text.ToString());
 
-                UserBox.Enabled = false;
-                buttonEnter.Text = "Отключиться";
+                //UserBox.Enabled = false;
+                //buttonEnter.Text = "Отключиться";
                 IsConnected = true;
             }
         }
@@ -38,9 +50,12 @@ namespace clientChat
             {
                 Client.Disconnect(ID);
                 
-                UserBox.Enabled = true;
-                buttonEnter.Text = "Подключиться";
+                //UserBox.Enabled = true;
+                //buttonEnter.Text = "Подключиться";
                 IsConnected = false;
+
+                this.Hide();
+                loginForm.Show();
             }
         }
         private void buttonEnter_Click(object sender, EventArgs e)
@@ -53,15 +68,10 @@ namespace clientChat
         {
             chatBox.Items.Add(msg);
         }
-
-        private void ChatForm_Load(object sender, EventArgs e)
-        {
-            //Client = new ChatService.ChatServiceClient(new System.ServiceModel.InstanceContext(this));
-        }
-
         private void ChatForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             DisconnectUser();
+            loginForm.Close();
         }
 
         private void msgBox_KeyDown(object sender, KeyEventArgs e)

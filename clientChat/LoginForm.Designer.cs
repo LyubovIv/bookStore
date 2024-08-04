@@ -83,6 +83,7 @@
             this.buttonEnter.TabIndex = 5;
             this.buttonEnter.Text = "Вход";
             this.buttonEnter.UseVisualStyleBackColor = true;
+            this.buttonEnter.Click += new System.EventHandler(this.buttonEnter_Click);
             // 
             // buttonRegistration
             // 
