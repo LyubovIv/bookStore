@@ -1,6 +1,6 @@
 ﻿namespace clientChat
 {
-    partial class LoginForm
+    partial class RegistrationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,39 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.login = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.password = new System.Windows.Forms.TextBox();
+            this.userName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.buttonEnter = new System.Windows.Forms.Button();
-            this.buttonRegistration = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.buttonReg = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // login
             // 
-            this.login.Location = new System.Drawing.Point(67, 12);
+            this.login.Location = new System.Drawing.Point(123, 12);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(163, 20);
+            this.login.Size = new System.Drawing.Size(189, 20);
             this.login.TabIndex = 0;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(67, 38);
+            this.password.Location = new System.Drawing.Point(123, 38);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(163, 20);
-            this.password.TabIndex = 2;
+            this.password.Size = new System.Drawing.Size(189, 20);
+            this.password.TabIndex = 1;
+            // 
+            // userName
+            // 
+            this.userName.Location = new System.Drawing.Point(123, 64);
+            this.userName.Name = "userName";
+            this.userName.Size = new System.Drawing.Size(189, 20);
+            this.userName.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 15);
+            this.label1.Location = new System.Drawing.Point(76, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 3;
@@ -69,45 +70,46 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 41);
+            this.label2.Location = new System.Drawing.Point(69, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Пароль:";
             // 
-            // buttonEnter
+            // label3
             // 
-            this.buttonEnter.Location = new System.Drawing.Point(67, 64);
-            this.buttonEnter.Name = "buttonEnter";
-            this.buttonEnter.Size = new System.Drawing.Size(163, 23);
-            this.buttonEnter.TabIndex = 5;
-            this.buttonEnter.Text = "Вход";
-            this.buttonEnter.UseVisualStyleBackColor = true;
-            this.buttonEnter.Click += new System.EventHandler(this.buttonEnter_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(11, 67);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(106, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Имя пользователя:";
             // 
-            // buttonRegistration
+            // buttonReg
             // 
-            this.buttonRegistration.Location = new System.Drawing.Point(67, 93);
-            this.buttonRegistration.Name = "buttonRegistration";
-            this.buttonRegistration.Size = new System.Drawing.Size(163, 23);
-            this.buttonRegistration.TabIndex = 6;
-            this.buttonRegistration.Text = "Регисрация";
-            this.buttonRegistration.UseVisualStyleBackColor = true;
-            this.buttonRegistration.Click += new System.EventHandler(this.buttonRegistration_Click);
+            this.buttonReg.Location = new System.Drawing.Point(123, 90);
+            this.buttonReg.Name = "buttonReg";
+            this.buttonReg.Size = new System.Drawing.Size(189, 25);
+            this.buttonReg.TabIndex = 6;
+            this.buttonReg.Text = "Зарегистрироваться";
+            this.buttonReg.UseVisualStyleBackColor = true;
+            this.buttonReg.Click += new System.EventHandler(this.buttonReg_Click);
             // 
-            // LoginForm
+            // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(253, 128);
-            this.Controls.Add(this.buttonRegistration);
-            this.Controls.Add(this.buttonEnter);
+            this.ClientSize = new System.Drawing.Size(328, 127);
+            this.Controls.Add(this.buttonReg);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.userName);
             this.Controls.Add(this.password);
             this.Controls.Add(this.login);
-            this.Name = "LoginForm";
-            this.Text = "LoginForm";
+            this.Name = "RegistrationForm";
+            this.Text = "RegistrationForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistrationForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,11 +118,11 @@
         #endregion
 
         private System.Windows.Forms.TextBox login;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TextBox password;
+        private System.Windows.Forms.TextBox userName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonEnter;
-        private System.Windows.Forms.Button buttonRegistration;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonReg;
     }
 }

@@ -17,8 +17,9 @@ namespace clientChat
     {
         SqlConnection conn;
         string cs = null;
-        int connectCount;
+        int connectCount = 0;
         ChatForm Form;
+        RegistrationForm RegistrationForm;
         public LoginForm()
         {
             InitializeComponent();
@@ -47,7 +48,6 @@ namespace clientChat
                         if (connectCount == 1)
                         {
                             Form = new ChatForm(name, this);
-
                         }
                         else Form.ChangeUser(name);
 
@@ -79,6 +79,46 @@ namespace clientChat
                 return false;
             }
             return true;
+        }
+
+        private void buttonRegistration_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                RegistrationForm = new RegistrationForm(this);
+            
+                this.Hide();
+                RegistrationForm.Show();
+
+                login.Clear();
+                password.Clear();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ошибка регистрации!");
+            }
+        }
+        public bool AddNewUser(string log, string pas, string nick)
+        {
+            try
+            {
+            
+                string query = "insert into [dbo].[Table]([Login],[Password],[UserName]) " +
+                               "values (N'" + log + "',N'" + pas + "',N'" + nick + "')";
+
+                conn.Open();
+                SqlCommand command = new SqlCommand(query, conn);
+                command.ExecuteNonQuery();
+                conn.Close();
+
+                return true;
+            
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }
