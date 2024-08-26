@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service", "servise\service.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "host", "host\host.csproj", "{E0459017-9E6F-47A9-ABC5-ACA7BFB39B8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clientChat", "clientChat\clientChat.csproj", "{DAC1FCD8-8109-4E70-82E1-262071EB1C6C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clientApp", "clientChat\clientApp.csproj", "{DAC1FCD8-8109-4E70-82E1-262071EB1C6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

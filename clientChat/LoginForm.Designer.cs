@@ -35,7 +35,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonEnter = new System.Windows.Forms.Button();
-            this.buttonRegistration = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // login
@@ -85,29 +84,18 @@
             this.buttonEnter.UseVisualStyleBackColor = true;
             this.buttonEnter.Click += new System.EventHandler(this.buttonEnter_Click);
             // 
-            // buttonRegistration
-            // 
-            this.buttonRegistration.Location = new System.Drawing.Point(67, 93);
-            this.buttonRegistration.Name = "buttonRegistration";
-            this.buttonRegistration.Size = new System.Drawing.Size(163, 23);
-            this.buttonRegistration.TabIndex = 6;
-            this.buttonRegistration.Text = "Регисрация";
-            this.buttonRegistration.UseVisualStyleBackColor = true;
-            this.buttonRegistration.Click += new System.EventHandler(this.buttonRegistration_Click);
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(253, 128);
-            this.Controls.Add(this.buttonRegistration);
+            this.ClientSize = new System.Drawing.Size(253, 98);
             this.Controls.Add(this.buttonEnter);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.password);
             this.Controls.Add(this.login);
             this.Name = "LoginForm";
-            this.Text = "LoginForm";
+            this.Text = "Вход";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,6 +109,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonEnter;
-        private System.Windows.Forms.Button buttonRegistration;
     }
 }

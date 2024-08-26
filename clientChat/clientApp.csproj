@@ -49,6 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUsersForm.Designer.cs">
+      <DependentUpon>AdminUsersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ChatService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -66,14 +78,23 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistrationForm.cs">
+    <Compile Include="bookStoreForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistrationForm.Designer.cs">
-      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    <Compile Include="bookStoreForm.Designer.cs">
+      <DependentUpon>bookStoreForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUsersForm.resx">
+      <DependentUpon>AdminUsersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bookStoreForm.resx">
+      <DependentUpon>bookStoreForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChatForm.resx">
       <DependentUpon>ChatForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,9 +110,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RegistrationForm.resx">
-      <DependentUpon>RegistrationForm.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Connected Services\ChatService\ChatService.wsdl" />
     <None Include="Connected Services\ChatService\item.xsd">
       <SubType>Designer</SubType>

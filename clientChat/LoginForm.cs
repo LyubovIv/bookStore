@@ -10,22 +10,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Configuration;
+using System.Threading;
 
 namespace clientChat
 {
     public partial class LoginForm : Form
     {
-        SqlConnection conn;
+        SqlConnection LFConn;
         string cs = null;
         int connectCount = 0;
-        ChatForm Form;
-        RegistrationForm RegistrationForm;
+        ChatForm chatForm;
+        bookStoreForm BSForm;
+        AdminForm adminForm;
+        AdminUsersForm adminUsersForm;
+
         public LoginForm()
         {
             InitializeComponent();
-            conn = new SqlConnection();
-            cs = ConfigurationManager.ConnectionStrings["AuthorizationConnString"].ConnectionString;
-            conn.ConnectionString = cs;
+            LFConn = new SqlConnection();
+            cs = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
+            LFConn.ConnectionString = cs;
         }
 
         private void buttonEnter_Click(object sender, EventArgs e)
@@ -34,25 +38,49 @@ namespace clientChat
             {
                 try
                 {
-                    string query = "select * from [dbo].[Table] where [Login] = N'"
+                    string query = "select * from [dbo].[Managers] where [Login] = N'"
                         + login.Text.Trim() + "' and [Password] = N'"
                         + password.Text.Trim() + "'";
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, LFConn);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
+                    
                     if (dt.Rows.Count == 1)
                     {
+                        int lvl = dt.Rows[0].Field<int>("AccessLevel");
+
                         connectCount++;
                         string name = dt.Rows[0][2].ToString();
-
-                        if (connectCount == 1)
+                        if (lvl == 2)
                         {
-                            Form = new ChatForm(name, this);
-                        }
-                        else Form.ChangeUser(name);
+                            if (connectCount == 1)
+                            {
+                                chatForm = new ChatForm(name, this);
+                                BSForm = new bookStoreForm(this);
+                            }
+                            else chatForm.ChangeUser(name);
 
-                        this.Hide();
-                        Form.Show();
+                            this.Hide();
+
+                            chatForm.Show();
+                            BSForm.Show();
+                        }
+                        else if (lvl == 1) 
+                        {
+                            if(connectCount == 1)
+                            {
+                                chatForm = new ChatForm(name, this);
+                                adminForm = new AdminForm(this);
+                                adminUsersForm = new AdminUsersForm(this);
+                            }
+                            else chatForm.ChangeUser(name);
+
+                            this.Hide();
+
+                            chatForm.Show();
+                            adminForm.Show();
+                            adminUsersForm.Show();
+                        }
 
                         login.Clear();
                         password.Clear();
@@ -79,46 +107,6 @@ namespace clientChat
                 return false;
             }
             return true;
-        }
-
-        private void buttonRegistration_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                RegistrationForm = new RegistrationForm(this);
-            
-                this.Hide();
-                RegistrationForm.Show();
-
-                login.Clear();
-                password.Clear();
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Ошибка регистрации!");
-            }
-        }
-        public bool AddNewUser(string log, string pas, string nick)
-        {
-            try
-            {
-            
-                string query = "insert into [dbo].[Table]([Login],[Password],[UserName]) " +
-                               "values (N'" + log + "',N'" + pas + "',N'" + nick + "')";
-
-                conn.Open();
-                SqlCommand command = new SqlCommand(query, conn);
-                command.ExecuteNonQuery();
-                conn.Close();
-
-                return true;
-            
-            }
-            catch (Exception)
-            {
-                return false;
-            }
         }
     }
 }
