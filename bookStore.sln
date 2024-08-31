@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "host", "host\host.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clientApp", "clientChat\clientApp.csproj", "{DAC1FCD8-8109-4E70-82E1-262071EB1C6C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomElements", "CustomElements\CustomElements.csproj", "{BFF52902-62EC-414C-9D66-91E0A86AF1F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{DAC1FCD8-8109-4E70-82E1-262071EB1C6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAC1FCD8-8109-4E70-82E1-262071EB1C6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAC1FCD8-8109-4E70-82E1-262071EB1C6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFF52902-62EC-414C-9D66-91E0A86AF1F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFF52902-62EC-414C-9D66-91E0A86AF1F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFF52902-62EC-414C-9D66-91E0A86AF1F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFF52902-62EC-414C-9D66-91E0A86AF1F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Runtime.InteropServices;
 using System.Configuration;
 using System.Threading;
 
@@ -24,12 +24,28 @@ namespace clientChat
         AdminForm adminForm;
         AdminUsersForm adminUsersForm;
 
+        //скругление формы
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+    (
+           int nLeftRect,
+           int nTopRect,
+           int nRightRect,
+           int nBottomRect,
+           int nWidthEllipse,
+           int nHeightEllipse
+    );
+
         public LoginForm()
         {
             InitializeComponent();
             LFConn = new SqlConnection();
             cs = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
             LFConn.ConnectionString = cs;
+
+            //скругление формы
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         private void buttonEnter_Click(object sender, EventArgs e)
@@ -107,6 +123,24 @@ namespace clientChat
                 return false;
             }
             return true;
+        }
+        protected override void WndProc(ref Message m)
+        {
+            switch (m.Msg)
+            {
+                case 0x84:
+                    base.WndProc(ref m);
+                    if ((int)m.Result == 0x1)
+                        m.Result = (IntPtr)0x2;
+                    return;
+            }
+
+            base.WndProc(ref m);
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
