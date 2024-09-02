@@ -123,31 +123,31 @@ namespace clientChat
 
         private void showFiltr_Click(object sender, EventArgs e)
         {
-            if (FiltrComboBox.Text == "Список новинок") 
+            if (FiltrComboBox.Texts == "Список новинок") 
             {
                 listNewBooks();
             }
-            else if (FiltrComboBox.Text == "Список самых продаваемых книг")
+            else if (FiltrComboBox.Texts == "Список самых продаваемых книг")
             {
                 listTop3Sales();
             }
-            else if(FiltrComboBox.Text == "Популярные авторы")
+            else if(FiltrComboBox.Texts == "Популярные авторы")
             {
                 listTopAuthors();
             }
-            else if (FiltrComboBox.Text == "Самый популярный жанр за день")
+            else if (FiltrComboBox.Texts == "Самый популярный жанр за день")
             {
                 GenreDay();
             }
-            else if (FiltrComboBox.Text == "Самый популярный жанр за неделю")
+            else if (FiltrComboBox.Texts == "Самый популярный жанр за неделю")
             {
                 GenreWeek();
             }
-            else if (FiltrComboBox.Text == "Самый популярный жанр за месяц")
+            else if (FiltrComboBox.Texts == "Самый популярный жанр за месяц")
             {
                 GenreMonth();
             }
-            else if (FiltrComboBox.Text == "Самый популярный жанр за год")
+            else if (FiltrComboBox.Texts == "Самый популярный жанр за год")
             {
                 GenreYear();
             }
@@ -155,19 +155,19 @@ namespace clientChat
 
         private void find_Click(object sender, EventArgs e)
         {
-            if (comboBoxFindBy.Text == "автору")
+            if (comboBoxFindBy.Texts == "автору")
             {
                 string param = textParam.Text;
                 sql = "SELECT * FROM [dbo].[Books] WHERE [Author] = N'" + param + "'";
                 FillDataGridView();
             }
-            else if (comboBoxFindBy.Text == "жанру")
+            else if (comboBoxFindBy.Texts == "жанру")
             {
                 string param = textParam.Text;
                 sql = "SELECT * FROM [dbo].[Books] WHERE [Genre] = N'" + param + "'";
                 FillDataGridView();
             }
-            else if (comboBoxFindBy.Text == "имени")
+            else if (comboBoxFindBy.Texts == "имени")
             {
                 string param = textParam.Text;
                 sql = "SELECT * FROM [dbo].[Books] WHERE [Name] = N'" + param + "'";
@@ -209,6 +209,18 @@ namespace clientChat
         private void bookStoreForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             loginForm.Close();
+        }
+
+        private void sales_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(189, 224, 254);
+            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 247, 250);
+            
         }
     }
 }

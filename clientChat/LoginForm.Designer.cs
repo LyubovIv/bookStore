@@ -72,7 +72,7 @@
             this.password.Multiline = false;
             this.password.Name = "password";
             this.password.Padding = new System.Windows.Forms.Padding(4);
-            this.password.PasswordChar = false;
+            this.password.PasswordChar = true;
             this.password.Size = new System.Drawing.Size(163, 25);
             this.password.TabIndex = 6;
             this.password.UnderLineStyle = true;
