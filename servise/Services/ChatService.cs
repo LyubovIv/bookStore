@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.Text;
+using service.Models;
 
-namespace servise
+namespace service.Services
 {
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)] //все клиенты работают с одним сервисом
     public class ChatService : IChatService
@@ -19,7 +18,7 @@ namespace servise
             {
                 Id = idCount,
                 Name = name,
-                opCon = OperationContext.Current
+                OpCon = OperationContext.Current
             };
             
             idCount++;
@@ -54,7 +53,7 @@ namespace servise
 
                 fullMsg += msg;
 
-                user.opCon.GetCallbackChannel<IChatServiceCallback>().MessageCallback(fullMsg);
+                user.OpCon.GetCallbackChannel<IChatServiceCallback>().MessageCallback(fullMsg);
             }
         }
     }
