@@ -1,7 +1,7 @@
 
-﻿namespace service.Services
 
-﻿using System;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
@@ -24,8 +24,6 @@ namespace service.Services
                 Name = name,
 
                 opCon = OperationContext.Current
-
-                OpCon = OperationContext.Current
 
             };
             
