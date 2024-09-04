@@ -1,4 +1,9 @@
-﻿namespace CustomElements
+﻿using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace CustomElements
 {
     [DefaultEvent("_TextboxChanged")]
     public partial class CustomTextbox : UserControl
