@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <LangVersion>default</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -131,6 +132,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Images\icons8-крестик-40.png" />
+    <None Include="Resources\Images\icons8-свернуть-40.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -157,10 +160,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-крестик-40.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-свернуть-40.png" />
+    <ProjectReference Include="..\CustomElements\CustomElements.csproj">
+      <Project>{bff52902-62ec-414c-9d66-91e0a86af1f2}</Project>
+      <Name>CustomElements</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomElements\CustomElements.csproj">
