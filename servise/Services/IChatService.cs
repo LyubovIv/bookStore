@@ -1,4 +1,10 @@
+
 ﻿namespace service.Services
+
+﻿using System.ServiceModel;
+
+namespace service.Services
+
 {
     [ServiceContract(CallbackContract = typeof(IChatServiceCallback))]
     public interface IChatService
