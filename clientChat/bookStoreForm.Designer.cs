@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(bookStoreForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -44,7 +45,12 @@
             this.showFiltr = new CustomElements.CustomButton();
             this.textBox2 = new clientChat.CustomTextbox();
             this.sell = new CustomElements.CustomButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.minimized = new CustomElements.CustomButton();
+            this.close = new CustomElements.CustomButton();
+            this.customButton1 = new CustomElements.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -72,6 +78,7 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -90,7 +97,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 160);
+            this.dataGridView1.Location = new System.Drawing.Point(1, 1);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -100,7 +107,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.HotPink;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(1069, 283);
+            this.dataGridView1.Size = new System.Drawing.Size(1066, 281);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView1_RowPrePaint);
             // 
@@ -311,12 +318,83 @@
             this.sell.UseVisualStyleBackColor = false;
             this.sell.Click += new System.EventHandler(this.sell_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(165)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Location = new System.Drawing.Point(17, 160);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1068, 283);
+            this.panel1.TabIndex = 35;
+            // 
+            // minimized
+            // 
+            this.minimized.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.minimized.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.minimized.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(165)))), ((int)(((byte)(255)))));
+            this.minimized.BorderRadius = 5;
+            this.minimized.BorderSize = 1;
+            this.minimized.FlatAppearance.BorderSize = 0;
+            this.minimized.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(165)))), ((int)(((byte)(255)))));
+            this.minimized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimized.ForeColor = System.Drawing.Color.White;
+            this.minimized.Image = ((System.Drawing.Image)(resources.GetObject("minimized.Image")));
+            this.minimized.Location = new System.Drawing.Point(1179, 12);
+            this.minimized.Name = "minimized";
+            this.minimized.Size = new System.Drawing.Size(34, 34);
+            this.minimized.TabIndex = 36;
+            this.minimized.TextColor = System.Drawing.Color.White;
+            this.minimized.UseVisualStyleBackColor = false;
+            this.minimized.Click += new System.EventHandler(this.minimized_Click);
+            // 
+            // close
+            // 
+            this.close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.close.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.close.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(165)))), ((int)(((byte)(255)))));
+            this.close.BorderRadius = 5;
+            this.close.BorderSize = 1;
+            this.close.FlatAppearance.BorderSize = 0;
+            this.close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.close.ForeColor = System.Drawing.Color.White;
+            this.close.Image = ((System.Drawing.Image)(resources.GetObject("close.Image")));
+            this.close.Location = new System.Drawing.Point(1219, 12);
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(34, 34);
+            this.close.TabIndex = 36;
+            this.close.TextColor = System.Drawing.Color.White;
+            this.close.UseVisualStyleBackColor = false;
+            this.close.Click += new System.EventHandler(this.close_Click);
+            // 
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.customButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.customButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(165)))), ((int)(((byte)(255)))));
+            this.customButton1.BorderRadius = 5;
+            this.customButton1.BorderSize = 1;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.ForeColor = System.Drawing.Color.White;
+            this.customButton1.Location = new System.Drawing.Point(1219, 12);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Size = new System.Drawing.Size(34, 34);
+            this.customButton1.TabIndex = 36;
+            this.customButton1.TextColor = System.Drawing.Color.White;
+            this.customButton1.UseVisualStyleBackColor = false;
+            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
+            // 
             // bookStoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(1268, 460);
+            this.ClientSize = new System.Drawing.Size(1268, 454);
+            this.Controls.Add(this.minimized);
+            this.Controls.Add(this.close);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.showFiltr);
             this.Controls.Add(this.find);
             this.Controls.Add(this.sales);
@@ -327,14 +405,15 @@
             this.Controls.Add(this.FiltrComboBox);
             this.Controls.Add(this.comboBoxFindBy);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "bookStoreForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Книжный магазин";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.bookStoreForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,5 +434,9 @@
         private CustomElements.CustomButton showFiltr;
         private CustomTextbox textBox2;
         private CustomElements.CustomButton sell;
+        private System.Windows.Forms.Panel panel1;
+        private CustomElements.CustomButton close;
+        private CustomElements.CustomButton minimized;
+        private CustomElements.CustomButton customButton1;
     }
 }
