@@ -162,5 +162,11 @@
   <ItemGroup>
     <None Include="Resources\icons8-свернуть-40.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomElements\CustomElements.csproj">
+      <Project>{bff52902-62ec-414c-9d66-91e0a86af1f2}</Project>
+      <Name>CustomElements</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
