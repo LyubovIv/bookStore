@@ -1,7 +1,4 @@
-
-﻿namespace service.Models
-
-﻿using System.ServiceModel;
+using System.ServiceModel;
 
 namespace service.Models
 

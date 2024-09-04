@@ -1,4 +1,6 @@
-﻿namespace clientChat
+﻿using System.Windows.Forms;
+
+namespace clientChat
 {
     public partial class ChatForm : Form, ChatService.IChatServiceCallback
     {

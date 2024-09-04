@@ -1,4 +1,10 @@
-﻿namespace clientChat
+﻿using System;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
+
+namespace clientChat
 {
     public partial class AdminUsersForm : Form
     {

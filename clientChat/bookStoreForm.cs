@@ -1,4 +1,12 @@
-﻿namespace clientChat
+﻿using System;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
+
+namespace clientChat
 {
     public partial class bookStoreForm : Form
     {
