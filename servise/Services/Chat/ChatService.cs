@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.Text;
+using servise.Models;
 
-namespace servise
+namespace servise.Services.Chat
 {
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)] //все клиенты работают с одним сервисом
     public class ChatService : IChatService

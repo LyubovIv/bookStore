@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
+using servise.Services.Chat;
 
 namespace host
 {
@@ -11,7 +12,7 @@ namespace host
     {
         static void Main(string[] args)
         {
-            using (var host = new ServiceHost(typeof(servise.ChatService)))
+            using (var host = new ServiceHost(typeof(ChatService)))
             {
                 host.Open();
                 Console.WriteLine("Хост запущен");
