@@ -1,4 +1,6 @@
-﻿namespace clientChat
+﻿using CustomElements;
+
+namespace clientChat
 {
     partial class LoginForm
     {
@@ -31,8 +33,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.password = new clientChat.CustomTextbox();
-            this.login = new clientChat.CustomTextbox();
+            this.password = new CustomTextbox();
+            this.login = new CustomTextbox();
             this.buttonEnter = new CustomElements.CustomButton();
             this.buttonExit = new CustomElements.CustomButton();
             this.SuspendLayout();

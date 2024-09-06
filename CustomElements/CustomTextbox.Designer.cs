@@ -1,4 +1,4 @@
-﻿namespace clientChat
+﻿namespace CustomElements
 {
     partial class CustomTextbox
     {
