@@ -1,4 +1,6 @@
-﻿namespace clientChat
+﻿using CustomElements;
+
+namespace clientChat
 {
     partial class bookStoreForm
     {
@@ -38,12 +40,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxFindBy = new CustomElements.CustomComboBox();
             this.FiltrComboBox = new CustomElements.CustomComboBox();
-            this.textParam = new clientChat.CustomTextbox();
+            this.textParam = new CustomTextbox();
             this.books = new CustomElements.CustomButton();
             this.sales = new CustomElements.CustomButton();
             this.find = new CustomElements.CustomButton();
             this.showFiltr = new CustomElements.CustomButton();
-            this.textBox2 = new clientChat.CustomTextbox();
+            this.textBox2 = new CustomTextbox();
             this.sell = new CustomElements.CustomButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.minimized = new CustomElements.CustomButton();
