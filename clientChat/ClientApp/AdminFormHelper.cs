@@ -25,6 +25,18 @@ namespace clientChat.ClientApp
             DataAdapter = new SqlDataAdapter(Sql, _connection);
             CommandBuilder = new SqlCommandBuilder(DataAdapter);
         }
+        
+        // Скругление формы
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        public static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse
+        );
 
         public static void LoginFormDbConnection(LoginForm loginForm)
         {

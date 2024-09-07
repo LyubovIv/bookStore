@@ -7,25 +7,13 @@ namespace clientChat
 {
     public partial class AdminForm : Form
     {
-        // Скругление формы
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRng")]
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect,
-            int nTopRect,
-            int nRightRect,
-            int nBottomRect,
-            int nWidthEllipse,
-            int nHeightEllipse
-        );
-        
         public AdminForm(LoginForm loginForm)
         {
             InitializeComponent();
 
             //скругление формы
             FormBorderStyle = FormBorderStyle.None;
-            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            Region = Region.FromHrgn(ClientApp.AdminFormHelper.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
             ClientApp.AdminFormHelper.LoginFormDbConnection(loginForm);
 
