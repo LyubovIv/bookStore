@@ -15,7 +15,7 @@ namespace clientChat
             Region = Region.FromHrgn(ClientApp.AdminFormHelper.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
             ClientApp.AdminFormHelper.LoginFormDbConnection(loginForm);
-
+            
             FillDataGridView();
         }
 
@@ -27,13 +27,14 @@ namespace clientChat
                 DGVBooks.DataSource = null;
                 ClientApp.AdminFormHelper.DataAdapter.Fill(ClientApp.AdminFormHelper.DataSet);
                 DGVBooks.DataSource = ClientApp.AdminFormHelper.DataSet.Tables[0];
+                ClientApp.AdminFormHelper.Sql = null;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(@"Ошибка заполнения данных", ex.Message);
             }
         }
-        
+
         private void buttonSaveBooks_Click(object sender, EventArgs e)
         {
             try
