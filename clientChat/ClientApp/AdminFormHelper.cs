@@ -8,7 +8,6 @@ namespace clientChat.ClientApp
 {
     public static class AdminFormHelper
     {
-        
         // ADO.NET запрос для получения списка книг
         public static string Sql = "select * from [dbo].[Books]";
         private static SqlConnection _connection;
