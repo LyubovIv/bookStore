@@ -1,6 +1,5 @@
 using System;
 using System.Drawing;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace clientChat
@@ -16,8 +15,6 @@ namespace clientChat
             Region = Region.FromHrgn(ClientApp.AdminFormHelper.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
             ClientApp.AdminFormHelper.LoginFormDbConnection(loginForm);
-
-            // ClientApp.AdminFormHelper.GetAllBooksFromDb();
             
             FillDataGridView();
         }
