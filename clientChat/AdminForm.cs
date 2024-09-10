@@ -42,7 +42,8 @@ namespace clientChat
                 ClientApp.AdminFormHelper.DataAdapter.Update(ClientApp.AdminFormHelper.DataSet);
                 MessageBox.Show(@"Обновление успешно");
 
-                ClientApp.AdminFormHelper.Sql = null;
+                ClientApp.AdminFormHelper.Sql = ClientApp.AdminFormHelper.GetAllBooksFromDb();
+                FillDataGridView();
             }
             catch (Exception ex)
             {
